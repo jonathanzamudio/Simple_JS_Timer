@@ -1,0 +1,49 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css.css" >
+	<link rel="stylesheet" href="css_mobile.css" media="only screen and (max-device-width: 480px)">
+	<link rel="stylesheet" href="css_mobileLandscape.css" media="only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape)">
+</head>
+<body>
+	<div id="tabs">
+		<span id="crono" class="tabs pointer active">Stopwatch</span><span id="circuits" class="tabs pointer">Timer</span>
+	</div>
+	<div id="containerCrono" class="container">
+		<div class="padd">
+			Hours: <div id="graphHours" class="graphCont"></div>
+			Minutes: <div id="graphMinutes" class="graphCont"></div>
+			Seconds: <div id="graphSeconds" class="graphCont"></div>
+			Tenths: <div id="graphTenths" class="graphCont"></div>
+			<div id="controls">
+				<span id="hours" class="clock">00</span><span class="clock">:</span><span id="minutes" class="clock">00</span>
+				<span class="clock">:</span><span id="seconds" class="clock">00</span><span class="clock">.</span>
+				<span id="tenths" class="clock">00</span>
+				<br><br>
+				
+				<button id="start" class="pointer">Start</button><button id="stop" class="pointer disabled" >Pause</button><button id="clear" class="pointer disabled">Reset</button>
+			
+			</div>
+		</div>
+	</div>
+	<div id="circuitsContainer" class="container visible">
+		<div id="circuitsControls">
+			Sets finished: <span id="circuit" class="circuits">00</span> <div id="graphCircuits" class="graphCont"></div>
+			Resting time: <span id="restTime" class="circuits">00</span><div id="graphRests" class="graphCont"></div>
+			Activity time: <span id="circuitsInterval" class="circuits">00</span><div id="graphIntervals" class="graphCont"></div>
+		</div>
+		<table id="circuitsTable"><tr><td>Total time set:</td><td> <span id="totalTime">00:00</span></td><tr>
+		<tr><td>Set time in seconds:</td><td> <input class="textBox" id="circuitSecs" name="circuitSecs" type="number" value="2" min="2" max="3600"></td></tr>
+		<tr><td>Rest time in seconds:</td><td> <input class="textBox" id="restSecs" name="restSecs" type="number" value="2" min="2" max="3600"></td></tr>
+		<tr><td>Total number of sets:</td><td> <input class="textBox" id="circuitsNum" name="circuitsNum" type="number" value="1" min="1" max="3600"></td></tr>
+		</table><br>
+		<button id="startCircuit" class="pointer"/>Go</button><button id="pauseCircuit" class="pointer disabled" />Pause</button><button id="resetCircuit" class="pointer disabled"/>Reset</button>
+	
+	</div>
+	<audio id="bell"><source  src="bell.mp3" type="audio/mpeg"></audio>
+	<audio id="beep"><source  src="beep.mp3" type="audio/mpeg"></audio>
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="timer.js"></script>
