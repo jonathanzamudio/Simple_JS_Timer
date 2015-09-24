@@ -26,8 +26,9 @@ var TIMER = {
 	tool:function (action){
 		$('.container.visible').removeClass('visible');
 		$('.tabs.active').removeClass('active');
-		if(action == 'crono'){$('#circuitsContainer').addClass('visible');$('#crono').addClass('active');}
-		if(action == 'circuits'){$('#containerCrono').addClass('visible');$('#circuits').addClass('active');}
+		if(action == 'crono'){$('#circuitsContainer,#settingsContainer').addClass('visible');$('#crono').addClass('active');}
+		if(action == 'circuits'){$('#containerCrono,#settingsContainer').addClass('visible');$('#circuits').addClass('active');}
+		if(action == 'settings'){$('#circuitsContainer,#containerCrono').addClass('visible');$('#settings').addClass('active');}
 	},
 	padding:function(param){
 		if(param < 10){param = '0'+param;}
@@ -195,18 +196,46 @@ var TIMER = {
 		if(action == 'Intervals' || action == 'Rests'){if(secGraphWidth == null){secGraphWidth = 0;}}
 		$('#graph'+action).append('<span class="graphSec" style="width:'+secGraphWidth+'%"> </span>');
 	}
-}
+};
 
-$(document).on('click','.pointer',function(){
-	var action = $(this).attr('id');
-	switch(action){
-		case'crono':TIMER.tool(action);break;
-		case'circuits':TIMER.tool(action);break;
-		case'start':TIMER.startTimer();break;
-		case'stop':TIMER.stopTimer();break;
-		case'clear':TIMER.resetTimer();break;
-		case'startCircuit':TIMER.startCircuits();break;
-		case'pauseCircuit':TIMER.pauseCircuits();break;
-		case'resetCircuit':TIMER.resetCircuits();break;
+var SETTINGS = {
+	settingsList:null,
+	clickHandler:function (){
+		$(document).on('click','.pointer',function(){
+			var action = $(this).attr('id');
+			switch(action){
+				case'crono':TIMER.tool(action);break;
+				case'circuits':TIMER.tool(action);break;
+				case'start':TIMER.startTimer();break;
+				case'stop':TIMER.stopTimer();break;
+				case'clear':TIMER.resetTimer();break;
+				case'startCircuit':TIMER.startCircuits();break;
+				case'pauseCircuit':TIMER.pauseCircuits();break;
+				case'resetCircuit':TIMER.resetCircuits();break;
+				case'settings':TIMER.tool(action);break;
+				case'dark':case'white':SETTINGS.changeCSSsheet(action);break;
+				//default:console.log('This handler haven\'t been defined');
+			}
+		});
+	},
+	isLSEnabled:function(){
+		if(typeof(Storage) !== "undefined") {
+			if(localStorage.settings != undefined){
+				SETTINGS.changeCSSsheet(localStorage.theme);
+			}
+			else{//console.log('No settings file');}
+		} else {
+			
+		}
+	},
+	changeCSSsheet:function(cssSheet){
+		document.getElementById('appStyle').setAttribute('href', cssSheet+'.css');
+		localStorage.theme=cssSheet;
+	},
+	run:function(){
+		SETTINGS.isLSEnabled();
+		SETTINGS.clickHandler();
 	}
-});
+};
+
+SETTINGS.run();

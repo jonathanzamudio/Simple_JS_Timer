@@ -3,12 +3,13 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css.css" >
+	<link id="appStyle" rel="stylesheet" type="text/css" href="dark.css" >
 	<link rel="stylesheet" href="css_mobile.css" media="only screen and (max-device-width: 480px)">
 	<link rel="stylesheet" href="css_mobileLandscape.css" media="only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape)">
 </head>
 <body>
 	<div id="tabs">
-		<span id="crono" class="tabs pointer active">Stopwatch</span><span id="circuits" class="tabs pointer">Timer</span>
+		<span id="crono" class="tabs pointer active">Stopwatch</span><span id="circuits" class="tabs pointer">Timer</span><span id="settings" class="tabs pointer">Settings</span>
 	</div>
 	<div id="containerCrono" class="container">
 		<div class="padd">
@@ -39,7 +40,13 @@
 		<tr><td>Total number of sets:</td><td> <input class="textBox" id="circuitsNum" name="circuitsNum" type="number" value="1" min="1" max="3600"></td></tr>
 		</table><br>
 		<button id="startCircuit" class="pointer"/>Go</button><button id="pauseCircuit" class="pointer disabled" />Pause</button><button id="resetCircuit" class="pointer disabled"/>Reset</button>
-	
+	</div>
+	<div id="settingsContainer" class="container visible">
+		<div id="themeSelector">
+			<p>Pick a theme:</p>
+			<div id="dark" class="pointer themes">Dark</div>
+			<div id="white" class="pointer themes">Clear</div>
+		</div>
 	</div>
 	<audio id="bell"><source  src="bell.mp3" type="audio/mpeg"></audio>
 	<audio id="beep"><source  src="beep.mp3" type="audio/mpeg"></audio>

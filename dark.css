@@ -1,0 +1,7 @@
+body{background:#000;color:#cdcbcc}
+#tabs .tabs.active{border-top:solid 3px #cdcbcc;color:#fff;}
+#tabs .tabs:hover{color:#ffffff;}
+.graphCont{background:#221910;}
+.textBox{color:#cdcbcc;border:solid 1px #221910;}
+
+
