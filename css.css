@@ -25,4 +25,5 @@ button:hover{opacity:0.8}
 .textBox{background:transparent; border:0;padding: 4 4px;width:60px;}
 #circuitsTable tr td{font-weight:300}
 #circuitsTable tr td:first-child{width:250px;}
+#themeSelector div{border-bottom:solid 1px #cbcdcc;padding:20px;}
 

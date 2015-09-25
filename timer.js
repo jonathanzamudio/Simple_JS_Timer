@@ -223,7 +223,7 @@ var SETTINGS = {
 			if(localStorage.settings != undefined){
 				SETTINGS.changeCSSsheet(localStorage.theme);
 			}
-			else{//console.log('No settings file');}
+			else{/*console.log('No settings file');*/}
 		} else {
 			
 		}
