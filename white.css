@@ -1,5 +1,8 @@
 body{background:#fff; color:#9d9b9c}
-#tabs .tabs.active{border-top:solid 3px #568b46;color:#333;}
-#tabs .tabs:hover{color:#ce2b27;}
+#tabs .tabs.active{border-top:solid 3px #aaa;color:#333;}
+#tabs .tabs:hover{color:#666;}
 .graphCont{background:#cdcbcc;}
 .textBox{color:#9d9b9c;border:solid 1px #cdcbcc;}
+#crono .icon{background-image:url('img/stopwatchWhite.gif');}
+#circuits .icon{background-image:url('img/timerWhite.gif');}
+#settings .icon{background-image:url('img/gearWhite.gif');}

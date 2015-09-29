@@ -220,10 +220,10 @@ var SETTINGS = {
 	},
 	isLSEnabled:function(){
 		if(typeof(Storage) !== "undefined") {
-			if(localStorage.settings != undefined){
+			if(localStorage.theme != undefined){
 				SETTINGS.changeCSSsheet(localStorage.theme);
 			}
-			else{//console.log('No settings file');}
+			else{console.log('No settings file');}
 		} else {
 			
 		}

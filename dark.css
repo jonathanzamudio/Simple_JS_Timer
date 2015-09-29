@@ -3,5 +3,8 @@ body{background:#000;color:#cdcbcc}
 #tabs .tabs:hover{color:#ffffff;}
 .graphCont{background:#221910;}
 .textBox{color:#cdcbcc;border:solid 1px #221910;}
+#crono .icon{background-image:url('img/stopwatchDark.gif');}
+#circuits .icon{background-image:url('img/timerDark.gif');}
+#settings .icon{background-image:url('img/gearDark.gif');}
 
 
